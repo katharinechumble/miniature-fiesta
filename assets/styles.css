@@ -5,7 +5,7 @@
     --tertiary: #545152;
     /*--text-color: #5E6063;*/
     --quartiary: #8C233C;
-    --color-light: #8B8E92;
+    --color-light: #ABADB0;
 }
 
 * {
@@ -25,14 +25,23 @@ body {
 header{
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--primary);
+    color: var(--secondary);
+    text-align: center;
 }
 
 h1 {
-    text-align: align-center;
-    padding: 0;
+    text-align: center;
+    padding: 5px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 15px, 0;
 }
 
 .btn {
-    background-color: var(--secondary);
+    background-color: var(--quartiary);
     color: var(--color-light);
+    padding: 5px;
+    margin: 15px;
+    text-align: center;
 }
