@@ -1,0 +1,38 @@
+/* boiler plate styling */
+:root {
+    --primary: #46474D;
+    --secondary: #A14057;
+    --tertiary: #545152;
+    /*--text-color: #5E6063;*/
+    --quartiary: #8C233C;
+    --color-light: #8B8E92;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--tertiary);
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--color-light);
+    font-size: 16px;
+}
+/* header styling begins here */
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    text-align: align-center;
+    padding: 0;
+}
+
+.btn {
+    background-color: var(--secondary);
+    color: var(--color-light);
+}
