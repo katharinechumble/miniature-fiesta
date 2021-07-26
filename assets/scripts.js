@@ -10,6 +10,7 @@ function getGameInfo() {
       return response.json();
     })
     .then(function (data) {
+      console.log(data);
       var infoDiv = document.getElementById("gameInfo");
       var imageDiv = document.getElementById("boxArt");
       var image = document.createElement("img");
@@ -19,5 +20,19 @@ function getGameInfo() {
       image.width = 400;
       imageDiv.appendChild(image);
       infoDiv.innerHTML += data.description;
+      for (var i = 0; i < 5; i++) {
+        var span = document.getElementById([i + 1] + "star");
+        if (data.ratings.length > 0) {
+          for (var j = 0; j < data.ratings.length; j++) {
+            if (data.ratings[j].id === i + 1) {
+              span.innerHTML = data.ratings[j].count;
+              j;
+            }
+          }
+          if (span.innerHTML === "") {
+            span.innerHTML = "0";
+          }
+        }
+      }
     });
 }
