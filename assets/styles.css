@@ -46,6 +46,7 @@ header h1 {
     justify-content: space-around;
     border: 2px solid var(--quartiary);
     width: 400px;
+    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.5)
 }
 
 .card-divider {
