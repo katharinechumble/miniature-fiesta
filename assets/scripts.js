@@ -1,5 +1,7 @@
+var gameFormEl = document.querySelector("#pushMe");
+var gameTitle = document.getElementById("gameTitle").value;
+
 function getGameInfo() {
-  var gameTitle = document.getElementById("gameTitle").value;
   gameTitle = gameTitle.split(" ").join("-").toLowerCase();
   fetch(
     "https://api.rawg.io/api/games/" +
@@ -36,3 +38,15 @@ function getGameInfo() {
       }
     });
 }
+
+var formSumbitHandler = function (event) {
+  event.preventDefault();
+
+  if (!gameTitle) {
+    alert(
+      "Please enter a valid game name! (Hint: Try removing punctuation, such as semi-colons!"
+    );
+  }
+};
+
+gameFormEl.addEventListener("click", formSumbitHandler);

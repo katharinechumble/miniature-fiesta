@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Search Engine</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-
-</head>
-
-<body>
-    <div class="container" id="headerBox" <center>
-        <h2>What am I playing?</h2>
-        </center>
+  <body>
+    <header class="container grid-x grid-padding-x align-center" id="headerBox">
+        <h1>What am I playing?</h1>
+    </header>
+    <div class="col-12">
+      <div class="container card grid-x grid-padding-x align-left" id="searchBox">
+      <div class="card-divider">
+        <h2>Search for a video game by name</h2>
+      </div>
+      <div class="card-section">
+      <input id="gameTitle" type="text" autofocus="true" class="form-input" />
+      <button type="button" id="pushMe" class="hollow-button alert-button" onclick="getGameInfo()">
+        Enter
+      </button>
+      </div>
     </div>
-
-    <div class="container" id="youtube"></div>
-    <div class="container" id="gameInfo"></div>
-    <div class="container" id="searchBox"></div>
-    <p>Search a video game by name and pull up information and Let's Plays</p>
-
-
-
+  </div>
     <div class="container" id="boxArt"></div>
-    <div class="container" id="searchDescription"></div>
-
-
-
-
+    <div class="container" id="rating">
+      <div class="row">
+        <p>5 Stars:</p>
+        <span id="5star"></span>
+      </div>
+      <div class="row">
+        <p>4 Stars:</p>
+        <span id="4star"></span>
+      </div>
+      <div class="row">
+        <p>3 Stars:</p>
+        <span id="3star"></span>
+      </div>
+      <div class="row">
+        <p>2 Stars:</p>
+        <span id="2star"></span>
+      </div>
+      <div class="row">
+        <p>1 Star:</p>
+        <span id="1star"></span>
+      </div>
+    </div>
+    <div class="container" id="gameInfo"></div>
+    <div class="container" id="youtube"></div>
+    <div class="container" id="stores"></div>
 
     <script src="assets/scripts.js"></script>
-</body>
-
+  </body>
 </html>

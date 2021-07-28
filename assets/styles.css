@@ -1,38 +1,64 @@
 /* boiler plate styling */
 :root {
-    --primary: #46474D;
-    --secondary: #A14057;
-    --tertiary: #545152;
-    /*--text-color: #5E6063;*/
-    --quartiary: #8C233C;
-    --color-light: #8B8E92;
+  --primary: #46474d;
+  --secondary: #a14057;
+  --tertiary: #545152;
+  /*--text-color: #5E6063;*/
+  --quartiary: #8c233c;
+  --color-light: #ededed;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--tertiary);
-    margin: 0;
-    padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: var(--color-light);
-    font-size: 16px;
+  background-color: var(--tertiary);
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+  color: var(--color-light);
+  font-size: 16px;
 }
 /* header styling begins here */
 
-header{
-    display: flex;
-    flex-wrap: wrap;
+header {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-h1 {
-    text-align: align-center;
-    padding: 0;
+/* search box */
+
+.card {
+  display: flex;
+  flex-wrap: flex;
+  background-color: var(--primary);
+  justify-content: space-around;
+  border: 2px solid var(--quartiary);
+  width: 400px;
 }
 
-.btn {
-    background-color: var(--secondary);
-    color: var(--color-light);
+.card-divider {
+  background-color: var(--primary);
+}
+
+.card-divider h2 {
+  color: var(--color-light);
+  font-size: 24px;
+}
+
+button {
+  background-color: var(--secondary);
+  color: var(--color-light);
+  text-decoration: none;
+  padding: 15px;
+  margin: 5px;
+  font-size: 14px;
+  opacity: 50%;
+}
+
+button:hover {
+  opacity: 100%;
+  transition-duration: 2s;
+  transform: translate(3em, 0);
 }
