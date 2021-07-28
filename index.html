@@ -5,30 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-
+    <title>Game Search Engine</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
-    <div class="container" id="headerBox" <center>
-        <h2>What am I playing?</h2>
+    <div class="container" id="headerBox">
+        <center>
+            <h2>What am I playing?</h2>
         </center>
     </div>
-
-    <div class="container" id="youtube"></div>
-    <div class="container" id="gameInfo"></div>
-    <div class="container" id="searchBox"></div>
-    <p>Search a video game by name and pull up information and Let's Plays</p>
-
-
-
+    <div class="container" id="searchBox">
+         <input type="text" id="gameTitle">
+         <button id="pushMe" class="hollow button" onclick="getGameInfo()">Enter</button>
+    </div>
     <div class="container" id="boxArt"></div>
-    <div class="container" id="searchDescription"></div>
-
-
-
+    <div class="container" id="rating">
+        <div class="row">
+            <p>5 Stars:</p><span id="5star"></span>
+        </div>
+        <div class="row">
+            <p>4 Stars:</p><span id="4star"></span>
+        </div>
+        <div class="row">
+            <p>3 Stars:</p><span id="3star"></span>
+        </div>
+        <div class="row">
+            <p>2 Stars:</p><span id="2star"></span>
+        </div>
+        <div class="row">
+            <p>1 Star:</p><span id="1star"></span>
+        </div>
+    </div>
+    <div class="container" id="gameInfo"></div>
+    <div class="container" id="youtube"></div>
+    <div class="container" id="stores"></div>
 
 
     <script src="assets/scripts.js"></script>
