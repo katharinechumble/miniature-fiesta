@@ -11,52 +11,70 @@
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"
+      integrity="sha512-kDmbIQZ10fxeKP5NSt3+tz77HO42IJiS+YPIirOIKTdokl4LtuXYo3NNvq9mTAF+rzdV1plp0sm9E6nvtVpnFQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
 
   <body>
     <header class="container grid-x grid-padding-x align-center" id="headerBox">
-        <h1>What am I playing?</h1>
+      <h1>What Am I Playing?</h1>
     </header>
-    <div class="col-12">
-      <div class="container card grid-x grid-padding-x align-left" id="searchBox">
+    <div class="container card grid-x grid-padding-x align-left" id="searchBox">
       <div class="card-divider">
         <h2>Search for a video game by name</h2>
       </div>
       <div class="card-section">
-      <input type="text" id="gameTitle" />
-      <button type="button" id="pushMe" class="hollow-button alert-button" onclick="getGameInfo()">
-        Enter
-      </button>
+        <input type="text" id="gameTitle" />
+        <button
+          type="button"
+          id="pushMe"
+          class="hollow-button alert-button"
+          onclick="getGameInfo()"
+        >
+          Enter
+        </button>
       </div>
     </div>
-  </div>
-    <div class="container" id="boxArt"></div>
-    <div class="container" id="rating">
-      <div class="row">
-        <p>5 Stars:</p>
+    <div
+      class="img-container grid-x grid-padding-x align-left flex-child-shrink"
+      id="boxArt"
+    ></div>
+    <div
+      class="rating-container grid-x grid-padding-x align-right align-stretch"
+      id="rating"
+    >
+      <div class="rating cell small-1 flex-child-auto">
+        <p><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i>:</p>
         <span id="5star"></span>
       </div>
-      <div class="row">
-        <p>4 Stars:</p>
+      <div class="rating cell small-1 flex-child-auto">
+        <p><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i>:</p>
         <span id="4star"></span>
       </div>
-      <div class="row">
-        <p>3 Stars:</p>
+      <div class="rating cell small-1 flex-child-auto">
+        <p><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i>:</p>
         <span id="3star"></span>
       </div>
-      <div class="row">
-        <p>2 Stars:</p>
+      <div class="rating cell small-1 flex-child-auto">
+        <p><i class="fi-star"></i><i class="fi-star"></i>:</p>
         <span id="2star"></span>
       </div>
-      <div class="row">
-        <p>1 Star:</p>
+      <div class="rating cell small-1 flex-child-auto">
+        <p><i class="fi-star"></i>:</p>
         <span id="1star"></span>
       </div>
     </div>
-    <div class="container" id="gameInfo"></div>
-    <div class="container" id="youtube"></div>
-    <div class="container" id="stores"></div>
+    <div class="grid-x grid-padding-x">
+      <div class="info-container align-left" id="gameInfo"></div>
+      <div class="video-container align-center" id="youtube"></div>
+      <div class="container" id="stores"></div>
+    </div>
 
     <script src="assets/scripts.js"></script>
   </body>
