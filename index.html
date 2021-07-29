@@ -27,7 +27,7 @@
     </header>
     <div class="container card grid-x grid-padding-x align-left" id="searchBox">
       <div class="card-divider">
-        <h2>Search for a video game by name</h2>
+        <h2>Search for a video game by name:</h2>
       </div>
       <div class="card-section">
         <input type="text" id="gameTitle" />
@@ -49,6 +49,7 @@
       class="rating-container grid-x grid-padding-x align-right align-stretch"
       id="rating"
     >
+    <!--<div class="callout-secondary">-->
       <div class="rating cell small-1 flex-child-auto">
         <p><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i><i class="fi-star"></i>:</p>
         <span id="5star"></span>
@@ -69,11 +70,12 @@
         <p><i class="fi-star"></i>:</p>
         <span id="1star"></span>
       </div>
-    </div>
+      </div>
+    <!--</div>-->
     <div class="grid-x grid-padding-x">
-      <div class="info-container align-left" id="gameInfo"></div>
-      <div class="video-container align-center" id="youtube"></div>
-      <div class="container" id="stores"></div>
+      <div class="info-container cell small-6 align-left" id="gameInfo"></div>
+      <div class="video-container cell small-6 align-center align-middle" id="youtube"></div>
+      <!--<div class="container" id="stores"></div>-->
     </div>
 
     <script src="assets/scripts.js"></script>
