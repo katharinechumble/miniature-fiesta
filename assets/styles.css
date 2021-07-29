@@ -55,7 +55,8 @@ header h1 {
 
 .card-divider h2 {
     color: var(--color-light);
-    font-size: 24px;
+    font-size: 23px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 button {
@@ -81,6 +82,7 @@ button:hover {
     flex-wrap: wrap;
     border-bottom: 2px solid var(--quartiary);
     padding-bottom: 10px;
+    margin: 10px;
 }
 
 .rating p {
@@ -95,7 +97,7 @@ button:hover {
 /* main body styles*/
 
 .info-container {
-    padding: 10px;
+    padding: 15px;
     margin: 0 5 5 15;
     display: inline;
 }
