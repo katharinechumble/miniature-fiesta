@@ -1,7 +1,5 @@
-var gameFormEl = document.querySelector("#pushMe");
-var gameTitle = document.getElementById("gameTitle").value;
-
 function getGameInfo() {
+  var gameTitle = document.getElementById("gameTitle").value;
   gameTitle = gameTitle.split(" ").join("-").toLowerCase();
   fetch(
     "https://api.rawg.io/api/games/" +
@@ -13,6 +11,7 @@ function getGameInfo() {
     })
     .then(function (data) {
       console.log(data);
+      getYoutube(gameTitle);
       var infoDiv = document.getElementById("gameInfo");
       var imageDiv = document.getElementById("boxArt");
       var image = document.createElement("img");
@@ -36,5 +35,20 @@ function getGameInfo() {
           }
         }
       }
+    });
+}
+
+function getYoutube(gameTitle) {
+  fetch(
+    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" +
+      gameTitle +
+      "&key=AIzaSyAzAOJ7_jMZq-33BUaxhdDSFJBr1LJdY8U"
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      var section = document.getElementById("youtube");
+      section.innerHTML = `<iframe width='560' height='315' src='https://www.youtube.com/embed/${data.items[0].id.videoId}' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>`;
     });
 }
