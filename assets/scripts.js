@@ -38,15 +38,3 @@ function getGameInfo() {
       }
     });
 }
-
-var formSumbitHandler = function (event) {
-  event.preventDefault();
-
-  if (!gameTitle) {
-    alert(
-      "Please enter a valid game name! (Hint: Try removing punctuation, such as semi-colons!"
-    );
-  }
-};
-
-gameFormEl.addEventListener("click", formSumbitHandler);
