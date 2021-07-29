@@ -1,6 +1,58 @@
-function getGameInfo() {
+function saveToHistory(game) {
+  var historyDiv = document.getElementById("history");
+
+  var storageArray = JSON.parse(localStorage.getItem("searchedGames"));
+  if (!storageArray) {
+    storageArray = [];
+  }
+  var inHistory = false;
+  for (i = 0; i < storageArray.length; i++) {
+    if (storageArray[i].game === game) {
+      inHistory = true;
+    }
+  }
+  if (!inHistory) {
+    var button = document.createElement("button");
+    button.innerHTML = game.toUpperCase();
+    button.id = game;
+    button.setAttribute("onclick", "getGameInfo('" + game + "')");
+    var gameInfo = {
+      game: game,
+    };
+    historyDiv.appendChild(button);
+    storageArray.push(gameInfo);
+    localStorage.setItem("searchedGames", JSON.stringify(storageArray));
+  }
+}
+
+function makeHistory() {
+  var historyDiv = document.getElementById("history");
+  historyDiv.innerHTML = "";
+
+  var storageArray = JSON.parse(localStorage.getItem("searchedGames"));
+  if (!storageArray) {
+    storageArray = [];
+  }
+
+  for (i = 0; i < storageArray.length; i++) {
+    var button = document.createElement("button");
+    button.innerHTML = storageArray[i].game.toUpperCase();
+    button.id = storageArray[i].game;
+    button.setAttribute(
+      "onclick",
+      "getGameInfo('" + storageArray[i].game + "')"
+    );
+    historyDiv.appendChild(button);
+  }
+}
+
+function getGameTitle() {
   var gameTitle = document.getElementById("gameTitle").value;
   gameTitle = gameTitle.split(" ").join("-").toLowerCase();
+  getGameInfo(gameTitle);
+}
+
+function getGameInfo(gameTitle) {
   fetch(
     "https://api.rawg.io/api/games/" +
       gameTitle +
@@ -10,8 +62,8 @@ function getGameInfo() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       getYoutube(gameTitle);
+      saveToHistory(gameTitle);
       var infoDiv = document.getElementById("gameInfo");
       var imageDiv = document.getElementById("boxArt");
       var image = document.createElement("img");
@@ -52,3 +104,5 @@ function getYoutube(gameTitle) {
       section.innerHTML = `<iframe width='560' height='315' src='https://www.youtube.com/embed/${data.items[0].id.videoId}' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>`;
     });
 }
+
+makeHistory();
