@@ -6,9 +6,9 @@ The [Game-Search](https://katharinechumble.github.io/miniature-fiesta/) applicat
 
 ## Usage
 
-Here is a link to the application, along with a link to the GitHub repository:
+Here is a link to and screenshot of the deployed application, along with a link to the GitHub repository:
 
-![Game-Search](https://katharinechumble.github.io/miniature-fiesta/)
+![Game-Search](assets/images/Game-Search-Screenshot.png)
 
 [Game-Search-Repo](https://github.com/katharinechumble/miniature-fiesta)
 
